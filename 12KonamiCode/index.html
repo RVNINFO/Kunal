@@ -12,9 +12,15 @@
       const secretCode = "raven"
       document.addEventListener('keydown',function(e){
         let char = e.key
-        console.log("Pressed: "+char)
         pressed.push(char)
-        console.log("Code Entered: "+pressed.join(" "))
+
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+        console.log("Code Entered: "+pressed.join(' '))
+
+        if(pressed.join("").includes(secretCode)) {
+          console.log("Ding Ding")
+          cornify_add()
+        }
       })
     </script>
   </body>
