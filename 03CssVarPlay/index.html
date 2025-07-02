@@ -15,30 +15,36 @@
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
     <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+    <input id="blur" type="range" name="blur" min="0" max="5" value="0" data-sizing="px">
 
     <label for="base">Base Color</label>
     <input id="base" type="color" name="base" value="#ffc600">
+
+    <label for="width">Width</label>
+    <input id="width" type="range" name="width" min="300" max="1000" value="300" data-sizing="px">
   </div>
 
   <img src="https://w0.peakpx.com/wallpaper/934/105/HD-wallpaper-mona-lisa-thumbnail.jpg" alt="" srcset="">
   <style>
+
     :root {
       --spacing: 10px;
       --blur: 1px;
       --base: #ffc600;
+      --width: 300px;
     }
 
-    .hl{
+    .hl {
       color: var(--base);
     }
 
     img {
       height: auto;
-      width: 30vw;
+      width: var(--width);
       padding: var(--spacing);
       filter: blur(var(--blur));
       background-color: var(--base);
+      transition: all 0.2s linear;
     }
 
     body {
@@ -63,11 +69,11 @@
     // console.log(inputs);
     inputs.forEach(input => input.addEventListener('change', handleChanges));
     inputs.forEach(input => input.addEventListener('mousemove', handleChanges));
-    function handleChanges(){
+    function handleChanges() {
       const value = this.value;
       const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`,value+suffix)
-      console.log(value+suffix);
+      document.documentElement.style.setProperty(`--${this.name}`, value + suffix)
+      console.log(value + suffix);
     }
   </script>
 
