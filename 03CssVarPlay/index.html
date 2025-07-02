@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
@@ -19,13 +21,21 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
-
+  <img src="https://w0.peakpx.com/wallpaper/934/105/HD-wallpaper-mona-lisa-thumbnail.jpg" alt="" srcset="">
   <style>
+    :root {
+      --spacing: 10px;
+      --blur: 10px;
+      --base: white;
+    }
 
-    /*
-      misc styles, nothing to do with CSS variables
-    */
+    img {
+      height: auto;
+      width: 30vw;
+      padding: var(--spacing);
+      filter: blur(var(--blur));
+      background-color: var(--base);
+    }
 
     body {
       text-align: center;
@@ -49,4 +59,5 @@
   </script>
 
 </body>
+
 </html>
