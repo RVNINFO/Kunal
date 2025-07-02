@@ -25,8 +25,12 @@
   <style>
     :root {
       --spacing: 10px;
-      --blur: 10px;
-      --base: white;
+      --blur: 1px;
+      --base: #ffc600;
+    }
+
+    .hl{
+      color: var(--base);
     }
 
     img {
@@ -54,8 +58,17 @@
       width: 100px;
     }
   </style>
-
   <script>
+    const inputs = document.querySelectorAll('.controls input');
+    // console.log(inputs);
+    inputs.forEach(input => input.addEventListener('change', handleChanges));
+    inputs.forEach(input => input.addEventListener('mousemove', handleChanges));
+    function handleChanges(){
+      const value = this.value;
+      const suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`,value+suffix)
+      console.log(value+suffix);
+    }
   </script>
 
 </body>
