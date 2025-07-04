@@ -9,6 +9,26 @@ html {
   box-sizing: inherit;
 }
 
+#stopbtn{
+  background-color: rgb(235, 8, 8);
+  padding: 15px 0px;
+  border: 1px solid transparent;
+  font-size: 25px;
+  width: 20%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 20px;
+  margin-bottom: 2vh;
+  color: white;  
+  cursor: pointer;
+}
+
+#stopbtn:hover{
+  border: 1px solid white;
+  background-color: red;
+}
+
 body {
   margin: 0;
   text-align: center;
